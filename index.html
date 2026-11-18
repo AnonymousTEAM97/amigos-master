@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AMIGOS master-franshizasi — investorlar uchun</title>
+<meta name="description" content="AMIGOS master-franshizasi: Fargʻonada ishlayotgan model asosida oʻz hududingizda fast-food tarmogʻini quring.">
+<meta property="og:title" content="AMIGOS master-franshizasi">
+<meta property="og:description" content="Oʻz hududingizda AMIGOS tarmogʻini quring. Brend, texnologiya va qoʻllab-quvvatlash bizdan.">
+<meta property="og:image" content="img/shop-wide.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#0B5D3B; --green-dark:#073F28; --green-deep:#05301E;
+  --yellow:#FFC400; --cream:#FFF8E6; --ink:#12241A; --muted:#5B6B62; --line:#E3E8E4;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Rubik',system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.5;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+section{padding:88px 0}
+h1,h2,h3{line-height:1.12;letter-spacing:-.01em}
+h2{font-size:clamp(28px,4vw,44px);font-weight:700;max-width:760px}
+.kicker{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:14px}
+.lead{font-size:18px;color:var(--muted);max-width:640px;margin-top:16px}
+
+/* top bar */
+.bar{position:sticky;top:0;z-index:50;background:rgba(5,48,30,.92);backdrop-filter:blur(8px)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.bar img{height:38px;width:auto}
+.bar-right{display:flex;gap:10px;align-items:center}
+.lang{display:flex;border:1px solid rgba(255,255,255,.35);border-radius:999px;overflow:hidden}
+.lang button{background:none;border:0;color:#fff;font:600 13px 'Rubik';padding:7px 13px;cursor:pointer;opacity:.75}
+.lang button.on{background:var(--yellow);color:var(--green-deep);opacity:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--yellow);color:var(--green-deep);font:700 16px 'Rubik';padding:16px 26px;border-radius:12px;border:0;text-decoration:none;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(255,196,0,.35)}
+.btn.small{padding:9px 16px;font-size:14px;border-radius:10px}
+
+/* hero */
+.hero{background:var(--green-deep);color:#fff;padding:0;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;min-height:620px}
+.hero-text{padding:80px 48px 80px 0;display:flex;flex-direction:column;justify-content:center}
+.hero .kicker{color:var(--yellow)}
+.hero h1{font-size:clamp(38px,5.6vw,68px);font-weight:800}
+.hero h1 .hl{color:var(--yellow)}
+.hero p.sub{font-size:20px;color:rgba(255,255,255,.82);margin:22px 0 30px;max-width:520px}
+.countries{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.countries span{font-size:13px;border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:6px 12px;color:rgba(255,255,255,.88)}
+.hero-photo{position:relative}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--green-deep) 0%,rgba(5,48,30,0) 30%)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+.stat{background:var(--cream);border-radius:18px;padding:26px 22px}
+.stat b{display:block;font-size:40px;font-weight:800;color:var(--green);line-height:1}
+.stat > span{display:block;margin-top:10px;color:var(--muted);font-size:15px}
+.note{margin-top:26px;font-size:17px;border-left:4px solid var(--yellow);padding-left:16px;max-width:720px}
+
+/* three reasons */
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.card{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff}
+.card img{height:220px;width:100%;object-fit:cover;background:#f6f6f4}
+.card div{padding:22px}
+.card h3{font-size:22px;color:var(--green)}
+.card p{color:var(--muted);margin-top:8px}
+
+/* point format */
+.point{background:var(--green);color:#fff}
+.point .kicker{color:var(--yellow)}
+.point .lead{color:rgba(255,255,255,.8)}
+.point-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.point-photo img{border-radius:22px;height:560px;width:100%;object-fit:cover}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}
+.fact{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:18px}
+.fact b{display:block;font-size:26px;color:var(--yellow);font-weight:800}
+.fact > span{font-size:14px;color:rgba(255,255,255,.82)}
+.fact.wide{grid-column:1/-1}
+
+/* model */
+.model{background:var(--cream)}
+.tree{margin-top:44px;display:grid;gap:14px;max-width:820px}
+.node{background:#fff;border-radius:16px;padding:20px 24px;border:1px solid var(--line)}
+.node h3{font-size:20px}
+.node p{color:var(--muted);font-size:15px;margin-top:4px}
+.node.top{background:var(--green);color:#fff;border:0}
+.node.top p{color:rgba(255,255,255,.8)}
+.node.mid{background:var(--yellow);border:0}
+.node.mid p{color:var(--green-deep)}
+.arrow{text-align:center;color:var(--green);font-size:22px;line-height:1}
+.leaves{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+/* territories */
+.terr{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
+.t{border:1px solid var(--line);border-radius:16px;padding:20px}
+.t h3{font-size:20px}
+.t p{color:var(--muted);font-size:15px}
+.t.main{background:var(--green);color:#fff;border:0}
+.t.main p{color:rgba(255,255,255,.8)}
+
+/* earnings */
+.earn{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+.e{border-top:4px solid var(--yellow);background:#fff;border-radius:4px 4px 16px 16px;padding:22px;box-shadow:0 1px 0 var(--line)}
+.e .n{font-weight:800;color:var(--green);font-size:15px}
+.e h3{font-size:19px;margin:8px 0}
+.e p{color:var(--muted);font-size:15px}
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+.path{background:var(--cream);border-radius:18px;padding:26px}
+.path h3{font-size:21px;color:var(--green)}
+.path ul{margin-top:12px;padding-left:18px;color:var(--ink)}
+.path li{margin:6px 0}
+
+/* factory */
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+.opt{border:1px solid var(--line);border-radius:18px;padding:26px}
+.opt small{font-weight:700;letter-spacing:.1em;color:var(--green);font-size:12px}
+.opt h3{font-size:22px;margin:8px 0}
+.opt p,.opt li{color:var(--muted)}
+.opt ul{padding-left:18px;margin-top:8px}
+
+/* support */
+.support{background:var(--green-deep);color:#fff}
+.support .kicker{color:var(--yellow)}
+.sup{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.s{border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:22px}
+.s h3{font-size:19px;color:var(--yellow)}
+.s p{color:rgba(255,255,255,.78);font-size:15px;margin-top:6px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:40px;counter-reset:st}
+.step{position:relative;padding:22px 18px;border-radius:16px;background:var(--cream)}
+.step b{display:inline-flex;width:36px;height:36px;border-radius:50%;background:var(--green);color:var(--yellow);align-items:center;justify-content:center;font-weight:800}
+.step h3{font-size:18px;margin-top:12px}
+.step p{font-size:14px;color:var(--muted)}
+
+/* terms */
+.terms{margin-top:36px;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.row{display:grid;grid-template-columns:260px 1fr;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row div{padding:18px 22px}
+.row div:first-child{font-weight:600;background:#FAFBFA}
+
+/* form */
+.apply{background:var(--green);color:#fff}
+.apply-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.apply .kicker{color:var(--yellow)}
+.apply .lead{color:rgba(255,255,255,.82)}
+.contact{margin-top:28px;font-size:18px}
+.contact a{color:var(--yellow);font-weight:700;text-decoration:none;font-size:24px}
+form{background:#fff;color:var(--ink);border-radius:22px;padding:30px;display:grid;gap:16px}
+label{font-size:14px;font-weight:600;display:grid;gap:6px}
+input{font:400 17px 'Rubik';padding:14px 16px;border:1.5px solid var(--line);border-radius:12px;outline:none;width:100%}
+input:focus{border-color:var(--green)}
+form .btn{width:100%;margin-top:4px;font-size:17px}
+.fine{font-size:12.5px;color:var(--muted)}
+.fine a{color:var(--green)}
+.msg{display:none;border-radius:12px;padding:14px 16px;font-weight:500}
+.msg.ok{display:block;background:#E7F5EC;color:var(--green)}
+.msg.err{display:block;background:#FDECEC;color:#9B1C1C}
+
+footer{background:var(--green-deep);color:rgba(255,255,255,.7);padding:30px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer img{height:34px}
+
+.float{display:none}
+
+@media (max-width:900px){
+  section{padding:64px 0}
+  .hero-grid{grid-template-columns:1fr;min-height:0}
+  .hero-photo{height:300px;order:-1}
+  .hero-photo::after{background:linear-gradient(0deg,var(--green-deep) 0%,rgba(5,48,30,0) 45%)}
+  .hero-text{padding:20px 0 56px}
+  .stats{grid-template-columns:1fr 1fr}
+  .three,.terr,.sup{grid-template-columns:1fr}
+  .point-grid,.apply-grid,.paths,.opts,.leaves{grid-template-columns:1fr}
+  .point-photo img{height:340px}
+  .earn{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr}
+  .row div:first-child{padding-bottom:4px;background:none}
+  .row div:last-child{padding-top:0}
+  .bar .btn.small{display:none}
+  .float{display:flex;position:fixed;left:16px;right:16px;bottom:14px;z-index:60;box-shadow:0 12px 28px rgba(0,0,0,.25)}
+  .apply{padding-bottom:110px}
+}
+@media (max-width:480px){.earn{grid-template-columns:1fr}.stat b{font-size:32px}}
+
+[data-ru]{}
+html[lang="ru"] .uz{display:none!important}
+html[lang="uz"] .ru{display:none!important}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <img src="img/logo.png" alt="AMIGOS">
+    <div class="bar-right">
+      <div class="lang" role="group" aria-label="Til / Язык">
+        <button type="button" data-set="uz" class="on">UZ</button>
+        <button type="button" data-set="ru">RU</button>
+      </div>
+      <a href="#ariza" class="btn small"><span class="uz">Ariza qoldirish</span><span class="ru">Оставить заявку</span></a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <span class="kicker"><span class="uz">Investorlar uchun taklif</span><span class="ru">Предложение для инвесторов</span></span>
+      <h1><span class="uz">AMIGOS <span class="hl">master-franshizasi</span></span><span class="ru">Мастер-франшиза <span class="hl">AMIGOS</span></span></h1>
+      <p class="sub"><span class="uz">Fargʻonada ishlab turgan model asosida oʻz hududingizda fast-food tarmogʻini quring.</span><span class="ru">Постройте сеть быстрого питания в своём регионе по модели, которая работает в Фергане.</span></p>
+      <div><a href="#ariza" class="btn"><span class="uz">Hududingizni muhokama qilamiz →</span><span class="ru">Обсудить вашу территорию →</span></a></div>
+      <div class="countries">
+        <span><span class="uz">Oʻzbekiston</span><span class="ru">Узбекистан</span></span>
+        <span><span class="uz">Qozogʻiston</span><span class="ru">Казахстан</span></span>
+        <span><span class="uz">Tojikiston</span><span class="ru">Таджикистан</span></span>
+        <span><span class="uz">Qirgʻiziston</span><span class="ru">Кыргызстан</span></span>
+        <span><span class="uz">Ozarbayjon</span><span class="ru">Азербайджан</span></span>
+      </div>
+    </div>
+    <div class="hero-photo"><img src="img/shop-terrace.jpg" alt="AMIGOS"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker"><span class="uz">Biz haqimizda</span><span class="ru">О нас</span></span>
+    <h2><span class="uz">AMIGOS 2016-yildan beri Fargʻonada fast-food tarmogʻini qurib kelmoqda</span><span class="ru">AMIGOS с 2016 года строит сеть быстрого питания в Фергане</span></h2>
+    <div class="stats">
+      <div class="stat"><b>2016</b><span class="uz">tashkil topgan yil, Fargʻona</span><span class="ru">год основания, Фергана</span></div>
+      <div class="stat"><b><span class="uz">6 ta</span><span class="ru">6</span></b><span class="uz">nuqta: 3 tasi oʻzimizniki, 3 tasi franshiza</span><span class="ru">точек: 3 собственные и 3 франшизные</span></div>
+      <div class="stat"><b><span class="uz">1 ta</span><span class="ru">1</span></b><span class="uz">fabrika butun tarmoq uchun mahsulot tayyorlaydi</span><span class="ru">фабрика готовит продукцию для всей сети</span></div>
+      <div class="stat"><b>20–25 <span class="uz">daq</span><span class="ru">мин</span></b><span class="uz">buyurtmani mijozga yetkazish</span><span class="ru">доставка заказа гостю</span></div>
+    </div>
+    <p class="note"><span class="uz">Birinchi kundan maqsad: raqobatchilardan taʼm, narx va tezlik bilan yutadigan juda mazali pitsa.</span><span class="ru">Цель с первого дня: очень вкусная пицца, которая выигрывает у конкурентов вкусом, ценой и скоростью.</span></p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2><span class="uz">Mijozlar AMIGOSni taʼm, narx va tezlik uchun tanlaydi</span><span class="ru">Гости выбирают AMIGOS за вкус, цену и скорость</span></h2>
+    <div class="three">
+      <div class="card"><img src="img/slice-pepperoni.jpg" alt="" style="object-fit:contain"><div><h3><span class="uz">Taʼm</span><span class="ru">Вкус</span></h3><p class="uz">Yagona retseptlar va bitta fabrika mahsuloti: har bir nuqtada bir xil taʼm.</p><p class="ru">Единые рецептуры и продукция одной фабрики: одинаковый вкус в каждой точке.</p></div></div>
+      <div class="card"><img src="img/slice-mix.jpg" alt="" style="object-fit:contain"><div><h3><span class="uz">Narx</span><span class="ru">Цена</span></h3><p class="uz">Boʻlakli pitsa 15 000 soʻmdan: talabalar va yoshlar uchun hamyonbop.</p><p class="ru">Пицца кусками от 15 000 сум: доступно студентам и молодёжи.</p></div></div>
+      <div class="card"><img src="img/croissant.jpg" alt="" style="object-fit:contain"><div><h3><span class="uz">Tezlik</span><span class="ru">Скорость</span></h3><p class="uz">Buyurtma 4–5 daqiqada tayyor, yetkazib berish 20–25 daqiqa.</p><p class="ru">Заказ готов за 4–5 минут, доставка за 20–25 минут.</p></div></div>
+    </div>
+    <p class="note"><span class="uz">Menyu tushlik, yengil tamaddi va kechki ovqatni qamraydi: 10 xil boʻlakli pitsa, 2 xil burrito, kruassan-burger va xot-dog, yopiq pitsalar, gazaklar.</span><span class="ru">Меню закрывает обед, перекус и ужин: 10 видов пиццы кусками, 2 вида буррито, круассан-бургер и хот-дог, закрытые пиццы, закуски.</span></p>
+  </div>
+</section>
+
+<section class="point">
+  <div class="wrap point-grid">
+    <div>
+      <span class="kicker"><span class="uz">Bitta nuqta formati</span><span class="ru">Формат точки</span></span>
+      <h2><span class="uz">AMIGOS nuqtasi: 10–20 m², 1–2 xodim, 2 haftada ishga tushadi</span><span class="ru">Точка AMIGOS: 10–20 м², 1–2 сотрудника, запуск за 2 недели</span></h2>
+      <p class="lead"><span class="uz">Nuqta tayyor mahsulotni fabrikadan oladi, shuning uchun unga katta oshxona kerak emas.</span><span class="ru">Точка получает готовую продукцию с фабрики, поэтому ей не нужна большая кухня.</span></p>
+      <div class="facts">
+        <div class="fact"><b>10–20 m²</b><span class="uz">nuqta maydoni</span><span class="ru">площадь точки</span></div>
+        <div class="fact"><b><span class="uz">1–2 kishi</span><span class="ru">1–2 чел.</span></b><span class="uz">smenadagi jamoa</span><span class="ru">команда на смене</span></div>
+        <div class="fact"><b><span class="uz">2 hafta</span><span class="ru">2 недели</span></b><span class="uz">shartnomadan ochilishgacha</span><span class="ru">от договора до открытия</span></div>
+        <div class="fact"><b><span class="uz">60 mln soʻm</span><span class="ru">60 млн сум</span></b><span class="uz">nuqta franshizasi, royaltisiz</span><span class="ru">франшиза точки, без роялти</span></div>
+        <div class="fact wide"><b><span class="uz">500 000 soʻmdan</span><span class="ru">от 500 000 сум</span></b><span class="uz">kuniga sof foyda; loyiha quvvatida oyiga ~30 mln soʻmgacha</span><span class="ru">чистыми в день; до ~30 млн сум в месяц на проектной мощности</span></div>
+      </div>
+    </div>
+    <div class="point-photo"><img src="img/shop-front.jpg" alt="AMIGOS"></div>
+  </div>
+</section>
+
+<section class="model">
+  <div class="wrap">
+    <span class="kicker"><span class="uz">Master-franshiza nima</span><span class="ru">Что такое мастер-франшиза</span></span>
+    <h2><span class="uz">Butun hududda AMIGOS tarmogʻini rivojlantirish huquqi</span><span class="ru">Право развивать сеть AMIGOS на целой территории</span></h2>
+    <p class="lead"><span class="uz">Viloyat, yirik shahar yoki butun davlat: tarmoqni siz qurasiz, biz brend, texnologiya va qoʻllab-quvvatlashni beramiz.</span><span class="ru">Область, крупный город или страна: вы строите сеть, мы даём бренд, технологии и поддержку.</span></p>
+    <div class="tree">
+      <div class="node top"><h3>AMIGOS</h3><p class="uz">Brend, retseptlar, texnologiyalar, oʻqitish, yetkazib beruvchilar</p><p class="ru">Бренд, рецептуры, технологии, обучение, поставщики</p></div>
+      <div class="arrow">↓</div>
+      <div class="node mid"><h3><span class="uz">Master-franchayzi (siz)</span><span class="ru">Мастер-франчайзи (вы)</span></h3><p class="uz">Hudud, ochilishlar rejasi, nuqtalarni mahsulot bilan taʼminlash</p><p class="ru">Территория, план открытий, поставки продукции точкам</p></div>
+      <div class="arrow">↓</div>
+      <div class="leaves">
+        <div class="node"><h3><span class="uz">Oʻz nuqtalaringiz</span><span class="ru">Собственные точки</span></h3><p class="uz">oʻzingiz ochasiz</p><p class="ru">открываете сами</p></div>
+        <div class="node"><h3><span class="uz">Subfranchayzi nuqtalari</span><span class="ru">Точки субфранчайзи</span></h3><p class="uz">nuqta franshizasini sotasiz</p><p class="ru">продаёте франшизу точки</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker"><span class="uz">Hududlar</span><span class="ru">Территории</span></span>
+    <h2><span class="uz">Master-franshiza Oʻzbekistonda va mintaqaning yana toʻrt davlatida ochiq</span><span class="ru">Мастер-франшиза открыта в Узбекистане и четырёх странах региона</span></h2>
+    <div class="terr">
+      <div class="t main"><h3><span class="uz">Oʻzbekiston</span><span class="ru">Узбекистан</span></h3><p class="uz">viloyatlar va yirik shaharlar</p><p class="ru">области и крупные города</p></div>
+      <div class="t"><h3><span class="uz">Qozogʻiston</span><span class="ru">Казахстан</span></h3><p class="uz">kelishuv asosida</p><p class="ru">по договорённости</p></div>
+      <div class="t"><h3><span class="uz">Tojikiston</span><span class="ru">Таджикистан</span></h3><p class="uz">kelishuv asosida</p><p class="ru">по договорённости</p></div>
+      <div class="t"><h3><span class="uz">Qirgʻiziston</span><span class="ru">Кыргызстан</span></h3><p class="uz">kelishuv asosida</p><p class="ru">по договорённости</p></div>
+      <div class="t"><h3><span class="uz">Ozarbayjon</span><span class="ru">Азербайджан</span></h3><p class="uz">kelishuv asosida</p><p class="ru">по договорённости</p></div>
+      <div class="t"><h3><span class="uz">Rossiya</span><span class="ru">Россия</span></h3><p class="uz">kelajakda</p><p class="ru">в перспективе</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#FAFBFA">
+  <div class="wrap">
+    <span class="kicker"><span class="uz">Daromad manbalari</span><span class="ru">Как зарабатывает мастер</span></span>
+    <h2><span class="uz">Master-franchayzi subfranshizalar, mahsulot yetkazish va oʻz nuqtalaridan daromad oladi</span><span class="ru">Мастер-франчайзи зарабатывает на субфраншизах, поставках и своих точках</span></h2>
+    <div class="earn">
+      <div class="e"><span class="n">01</span><h3><span class="uz">Subfranshiza sotish</span><span class="ru">Продажа субфраншиз</span></h3><p class="uz">Hududingizda nuqta franshizasini sotish huquqi</p><p class="ru">Право продавать франшизу точки на своей территории</p></div>
+      <div class="e"><span class="n">02</span><h3><span class="uz">Mahsulotga ustama</span><span class="ru">Наценка на продукцию</span></h3><p class="uz">Tarmoq nuqtalari uchun fabrika mahsulotiga ustama qoʻyish huquqi</p><p class="ru">Право ставить наценку на продукцию фабрики для точек сети</p></div>
+      <div class="e"><span class="n">03</span><h3><span class="uz">Oʻz nuqtalaringiz</span><span class="ru">Собственные точки</span></h3><p class="uz">Oʻzingiz ochgan nuqtalar foydasi</p><p class="ru">Прибыль точек, которые вы открываете сами</p></div>
+      <div class="e"><span class="n">04</span><h3><span class="uz">Oʻz fabrikangiz (opsiya)</span><span class="ru">Своя фабрика (опция)</span></h3><p class="uz">Davlatingiz yoki shahringizda ishlab chiqarish, alohida toʻlov evaziga</p><p class="ru">Производство в вашей стране или городе, за отдельную плату</p></div>
+    </div>
+    <div class="paths">
+      <div class="path"><h3><span class="uz">1-yoʻl: oʻz tarmogʻingiz</span><span class="ru">Путь 1: своя сеть</span></h3>
+        <ul class="uz"><li>Hududingizda nuqtalar ochasiz</li><li>Har bir nuqta foydasini olasiz</li><li>AMIGOS ishga tushirish va oʻqitishda yordam beradi</li></ul>
+        <ul class="ru"><li>Открываете точки на своей территории</li><li>Получаете прибыль каждой точки</li><li>AMIGOS помогает с запуском и обучением</li></ul></div>
+      <div class="path"><h3><span class="uz">2-yoʻl: subfranshizalar</span><span class="ru">Путь 2: субфраншизы</span></h3>
+        <ul class="uz"><li>Nuqta franshizasini tadbirkorlarga sotasiz</li><li>Sotuv va mahsulot yetkazishdan daromad olasiz</li><li>AMIGOS sotishda yordam beradi: reklama, landing</li></ul>
+        <ul class="ru"><li>Продаёте франшизу точки предпринимателям</li><li>Зарабатываете на продаже и на поставках продукции</li><li>AMIGOS помогает продавать: реклама, лендинг</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker"><span class="uz">Ishlab chiqarish</span><span class="ru">Производство</span></span>
+    <h2><span class="uz">Mahsulot: AMIGOS fabrikasidan yoki hududingizdagi oʻz fabrikangizdan</span><span class="ru">Продукция: с фабрики AMIGOS или с вашей фабрики в регионе</span></h2>
+    <div class="opts">
+      <div class="opt"><small><span class="uz">1-VARIANT</span><span class="ru">ВАРИАНТ 1</span></small><h3><span class="uz">AMIGOS fabrikasi</span><span class="ru">Фабрика AMIGOS</span></h3><p class="uz">Nuqtalar tayyor mahsulotni yagona fabrikadan oladi. Hududingiz nuqtalari uchun ustamani siz belgilaysiz.</p><p class="ru">Точки получают готовую продукцию с единой фабрики. Вы ставите наценку для точек своей территории.</p></div>
+      <div class="opt"><small><span class="uz">2-VARIANT · ALOHIDA TOʻLOV</span><span class="ru">ВАРИАНТ 2 · ЗА ОТДЕЛЬНУЮ ПЛАТУ</span></small><h3><span class="uz">Oʻz fabrikangiz</span><span class="ru">Своя фабрика</span></h3><p class="uz">AMIGOS topshiradi:</p><p class="ru">AMIGOS передаёт:</p>
+        <ul class="uz"><li>texnologiyalar va retseptlar</li><li>oʻqitish</li><li>brendbuk</li><li>yetkazib beruvchilar</li></ul>
+        <ul class="ru"><li>технологии и рецептуры</li><li>обучение</li><li>брендбук</li><li>поставщиков</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="support">
+  <div class="wrap">
+    <span class="kicker"><span class="uz">Qoʻllab-quvvatlash</span><span class="ru">Поддержка</span></span>
+    <h2><span class="uz">AMIGOS masterga tarmoqni ishga tushirish va oʻstirish uchun hamma narsani beradi</span><span class="ru">AMIGOS даёт мастеру всё для запуска и роста сети</span></h2>
+    <div class="sup">
+      <div class="s"><h3><span class="uz">Texnologiya va retseptlar</span><span class="ru">Технологии и рецептуры</span></h3><p class="uz">butun menyu uchun tayyorlash standartlari</p><p class="ru">стандарты приготовления всего меню</p></div>
+      <div class="s"><h3><span class="uz">Brendbuk</span><span class="ru">Брендбук</span></h3><p class="uz">firma uslubi, peshlavhalar, qadoqlash</p><p class="ru">фирменный стиль, вывески, упаковка</p></div>
+      <div class="s"><h3><span class="uz">Yetkazib beruvchilar</span><span class="ru">Поставщики</span></h3><p class="uz">tekshirilgan xomashyo yetkazib beruvchilari</p><p class="ru">проверенные поставщики сырья</p></div>
+      <div class="s"><h3><span class="uz">Jamoani oʻqitish</span><span class="ru">Обучение команды</span></h3><p class="uz">Fargʻonada 5 ish kuni</p><p class="ru">5 рабочих дней в Фергане</p></div>
+      <div class="s"><h3><span class="uz">Franshiza sotuvi</span><span class="ru">Продажа франшизы</span></h3><p class="uz">reklama, landing, materiallar</p><p class="ru">реклама, лендинг, материалы</p></div>
+      <div class="s"><h3><span class="uz">Nuqtalarni ochish</span><span class="ru">Запуск точек</span></h3><p class="uz">nuqtani 2 haftada ochish</p><p class="ru">открытие точки за 2 недели</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker"><span class="uz">Jarayon</span><span class="ru">Процесс</span></span>
+    <h2><span class="uz">Arizadan birinchi nuqtalargacha: besh qadam</span><span class="ru">От заявки до первых точек: пять шагов</span></h2>
+    <div class="steps">
+      <div class="step"><b>1</b><h3><span class="uz">Ariza</span><span class="ru">Заявка</span></h3><p class="uz">hududni tanlash</p><p class="ru">выбор территории</p></div>
+      <div class="step"><b>2</b><h3><span class="uz">Ochilishlar rejasi</span><span class="ru">План открытий</span></h3><p class="uz">hududingizga moslab</p><p class="ru">под ваш регион</p></div>
+      <div class="step"><b>3</b><h3><span class="uz">Shartnoma</span><span class="ru">Договор</span></h3><p class="uz">master-franshiza shartnomasi</p><p class="ru">мастер-франшизы</p></div>
+      <div class="step"><b>4</b><h3><span class="uz">Oʻqitish</span><span class="ru">Обучение</span></h3><p class="uz">Fargʻonada 5 ish kuni</p><p class="ru">5 рабочих дней в Фергане</p></div>
+      <div class="step"><b>5</b><h3><span class="uz">Ishga tushirish</span><span class="ru">Запуск</span></h3><p class="uz">birinchi nuqtalar va subfranshiza sotuvi</p><p class="ru">первые точки и продажа субфраншиз</p></div>
+    </div>
+
+    <h2 style="margin-top:80px"><span class="uz">Master-franshiza shartlari</span><span class="ru">Условия мастер-франшизы</span></h2>
+    <div class="terms">
+      <div class="row"><div><span class="uz">Narxi</span><span class="ru">Стоимость</span></div><div><span class="uz">Hududdagi nuqtalar soniga bogʻliq, hajm uchun chegirma bilan. Individual hisoblanadi.</span><span class="ru">Зависит от числа точек на территории, со скидкой за объём. Рассчитывается индивидуально.</span></div></div>
+      <div class="row"><div><span class="uz">Master huquqlari</span><span class="ru">Права мастера</span></div><div><span class="uz">Subfranshiza sotish, fabrika mahsulotiga ustama, alohida toʻlov evaziga oʻz fabrikasi.</span><span class="ru">Продажа субфраншиз, наценка на продукцию фабрики, своя фабрика за отдельную плату.</span></div></div>
+      <div class="row"><div><span class="uz">Ochilishlar rejasi</span><span class="ru">План открытий</span></div><div><span class="uz">Majburiy, shahar, viloyat yoki davlat uchun tuziladi.</span><span class="ru">Обязательный, составляется под город, область или страну.</span></div></div>
+      <div class="row"><div><span class="uz">Shartnoma muddati</span><span class="ru">Срок договора</span></div><div><span class="uz">Muddatsiz, master reja va kelishuvlarni bajarar ekan.</span><span class="ru">Бессрочный, пока мастер выполняет план и договорённости.</span></div></div>
+      <div class="row"><div><span class="uz">Reja bajarilmasa</span><span class="ru">Если план не выполняется</span></div><div><span class="uz">AMIGOS franshizani qaytarib olish huquqiga ega.</span><span class="ru">AMIGOS вправе отозвать франшизу.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="apply" id="ariza">
+  <div class="wrap apply-grid">
+    <div>
+      <span class="kicker"><span class="uz">Ariza</span><span class="ru">Заявка</span></span>
+      <h2><span class="uz">Hududingizni muhokama qilamiz</span><span class="ru">Обсудим вашу территорию</span></h2>
+      <p class="lead"><span class="uz">Maʼlumotlaringizni qoldiring: shartlar haqida aytib beramiz, nuqtalar soniga qarab narxni hisoblaymiz va ochilishlar rejasini tuzamiz.</span><span class="ru">Оставьте контакты: расскажем об условиях, рассчитаем стоимость под количество точек и составим план открытий.</span></p>
+      <p class="contact"><span class="uz">Yoki hoziroq qoʻngʻiroq qiling:</span><span class="ru">Или позвоните прямо сейчас:</span><br><a href="tel:+998932756262">+998 93 275 62 62</a><br><span style="font-size:15px;opacity:.8"><span class="uz">Telefon va Telegram</span><span class="ru">Телефон и Telegram</span></span></p>
+    </div>
+    <form id="leadForm" novalidate>
+      <label><span class="uz">Ismingiz</span><span class="ru">Ваше имя</span>
+        <input name="name" required autocomplete="name" data-ph-uz="Masalan: Anvar Karimov" data-ph-ru="Например: Анвар Каримов">
+      </label>
+      <label><span class="uz">Telefon raqamingiz</span><span class="ru">Номер телефона</span>
+        <input name="phone" type="tel" required autocomplete="tel" inputmode="tel" value="+998 ">
+      </label>
+      <label><span class="uz">Shahar yoki hudud</span><span class="ru">Город или регион</span>
+        <input name="city" required data-ph-uz="Masalan: Toshkent, Samarqand viloyati, Olmaota" data-ph-ru="Например: Ташкент, Самаркандская область, Алматы">
+      </label>
+      <input name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+      <button class="btn" type="submit" id="sendBtn"><span class="uz">Ariza yuborish</span><span class="ru">Отправить заявку</span></button>
+      <div class="msg" id="msg"></div>
+      <p class="fine"><span class="uz">Yuborish tugmasini bosib, maʼlumotlaringizni AMIGOS bilan bogʻlanish uchun berishga rozilik bildirasiz.</span><span class="ru">Нажимая кнопку, вы соглашаетесь передать свои данные AMIGOS для связи с вами.</span> <a href="https://docs.google.com/document/d/1yAniu_JumDamrg7LBCV62LbnyY8sRcXY6fGcU3UbX_Q/edit?usp=sharing" target="_blank" rel="noopener"><span class="uz">Maxfiylik siyosati</span><span class="ru">Политика конфиденциальности</span></a></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo.png" alt="AMIGOS">
+    <span>© AMIGOS · <span class="uz">Tez taomlar tarmogʻi, Fargʻona</span><span class="ru">Сеть быстрого питания, Фергана</span> · <a href="tel:+998932756262">+998 93 275 62 62</a></span>
+  </div>
+</footer>
+
+<a href="#ariza" class="btn float"><span class="uz">Ariza qoldirish</span><span class="ru">Оставить заявку</span></a>
+
+<script>
+var ENDPOINT = "APPS_SCRIPT_URL";
+var T = {
+  uz:{sending:"Yuborilmoqda...",ok:"Rahmat! Arizangiz qabul qilindi. Menejerimiz tez orada siz bilan bogʻlanadi.",err:"Xatolik yuz berdi. Iltimos, qayta urinib koʻring yoki +998 93 275 62 62 raqamiga qoʻngʻiroq qiling.",fill:"Iltimos, ism, telefon va shaharni toʻldiring.",title:"AMIGOS master-franshizasi — investorlar uchun"},
+  ru:{sending:"Отправляем...",ok:"Спасибо! Заявка принята. Наш менеджер скоро свяжется с вами.",err:"Произошла ошибка. Попробуйте ещё раз или позвоните +998 93 275 62 62.",fill:"Пожалуйста, заполните имя, телефон и город.",title:"Мастер-франшиза AMIGOS — для инвесторов"}
+};
+var lang = "uz";
+function setLang(l){
+  lang = l;
+  document.documentElement.lang = l;
+  document.title = T[l].title;
+  document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('on', b.dataset.set===l)});
+  document.querySelectorAll('[data-ph-uz]').forEach(function(i){i.placeholder = i.getAttribute('data-ph-'+l)});
+  try{localStorage.setItem('amigos_lang', l)}catch(e){}
+}
+document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.set)})});
+var q = new URLSearchParams(location.search);
+var start = q.get('lang');
+if(!start){try{start = localStorage.getItem('amigos_lang')}catch(e){}}
+setLang(start === 'ru' ? 'ru' : 'uz');
+
+var form = document.getElementById('leadForm'), msg = document.getElementById('msg'), btn = document.getElementById('sendBtn');
+form.addEventListener('submit', function(ev){
+  ev.preventDefault();
+  var f = form.elements;
+  if(f.website.value) return;
+  var name = f.name.value.trim(), phone = f.phone.value.trim(), city = f.city.value.trim();
+  if(!name || phone.replace(/\D/g,'').length < 9 || !city){ msg.className='msg err'; msg.textContent=T[lang].fill; return; }
+  btn.disabled = true; var old = btn.innerHTML; btn.textContent = T[lang].sending;
+  var body = new URLSearchParams({name:name, phone:phone, city:city, lang:lang,
+    utm_source:q.get('utm_source')||'', utm_campaign:q.get('utm_campaign')||'', utm_content:q.get('utm_content')||'', page:location.href});
+  fetch(ENDPOINT, {method:'POST', mode:'no-cors', body:body})
+    .then(function(){ msg.className='msg ok'; msg.textContent=T[lang].ok; form.reset(); f.phone.value='+998 ';
+      if(window.fbq){ try{fbq('track','Lead')}catch(e){} } })
+    .catch(function(){ msg.className='msg err'; msg.textContent=T[lang].err; })
+    .finally(function(){ btn.disabled=false; btn.innerHTML=old; });
+});
+</script>
+</body>
+</html>
