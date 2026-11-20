@@ -425,6 +425,7 @@ document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener
 var q = new URLSearchParams(location.search);
 var start = q.get('lang');
 if(!start){try{start = localStorage.getItem('amigos_lang')}catch(e){}}
+if(!start){try{var nl=(navigator.languages||[navigator.language||'']).join(',').toLowerCase(); if(/(^|,)ru/.test(nl) && !/(^|,)uz/.test(nl.split(',')[0])) start='ru';}catch(e){}}
 setLang(start === 'ru' ? 'ru' : 'uz');
 
 var form = document.getElementById('leadForm'), msg = document.getElementById('msg'), btn = document.getElementById('sendBtn');
